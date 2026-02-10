@@ -5,7 +5,7 @@ A single-page to-do web application built with HTML, CSS, and vanilla JavaScript
 ## Features
 
 - ✅ **Add Tasks**: Create new to-do items with a simple input field
-- ✏️ **Edit Tasks**: Double-click or use the edit button to modify existing tasks
+- ✏️ **Edit Tasks**: Use the edit button to modify existing tasks
 - ✓ **Complete Tasks**: Mark tasks as complete/incomplete with a single click
 - 🗑️ **Delete Tasks**: Remove individual tasks you no longer need
 - 🔍 **Filter Tasks**: View All, Active, or Completed tasks

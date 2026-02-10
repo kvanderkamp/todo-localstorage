@@ -258,11 +258,12 @@ class TodoApp {
     }
 
     loadExampleItems() {
+        const baseTime = Date.now();
         this.todos = [
-            { id: Date.now() + 1, text: 'Complete the project documentation', completed: false },
-            { id: Date.now() + 2, text: 'Review pull requests', completed: false },
-            { id: Date.now() + 3, text: 'Buy groceries', completed: true },
-            { id: Date.now() + 4, text: 'Schedule team meeting', completed: false }
+            { id: baseTime * 1000 + 1, text: 'Complete the project documentation', completed: false },
+            { id: baseTime * 1000 + 2, text: 'Review pull requests', completed: false },
+            { id: baseTime * 1000 + 3, text: 'Buy groceries', completed: true },
+            { id: baseTime * 1000 + 4, text: 'Schedule team meeting', completed: false }
         ];
         this.saveToLocalStorage();
     }
