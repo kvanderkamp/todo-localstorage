@@ -88,12 +88,50 @@ h1 {
   list-style: none;
 }
 
+.todo-divider {
+  padding: 12px 20px;
+  background: rgba(102, 126, 234, 0.1);
+  border-top: 2px solid rgba(102, 126, 234, 0.3);
+  border-bottom: 1px solid #404060;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #888;
+  user-select: none;
+  cursor: default;
+}
+
+.todo-divider span {
+  opacity: 0.7;
+}
+
 .todo-item {
   display: flex;
   align-items: center;
   padding: 15px 20px;
   border-bottom: 1px solid #404060;
-  transition: background 0.2s;
+  transition: all 0.2s;
+  cursor: move;
+}
+
+.todo-item.dragging {
+  opacity: 0.4;
+  background: rgba(102, 126, 234, 0.2);
+  cursor: grabbing;
+}
+
+.todo-item.drag-over {
+  border-top: 3px solid #667eea;
+  background: rgba(102, 126, 234, 0.1);
+  transform: translateY(2px);
+}
+
+.todo-item.editing {
+  background: rgba(102, 126, 234, 0.05);
+  box-shadow: inset 0 0 0 1px rgba(102, 126, 234, 0.2);
+  cursor: default;
 }
 
 .todo-item:hover {
@@ -104,6 +142,12 @@ h1 {
 .todo-item.completed .todo-text {
   text-decoration: line-through;
   color: #666;
+  cursor: default;
+}
+
+.todo-item.completed .todo-text:hover {
+  color: #666;
+  background: transparent;
 }
 
 .todo-checkbox {
@@ -146,10 +190,33 @@ h1 {
   font-size: 16px;
   color: #e0e0e0;
   word-break: break-word;
+  cursor: grab;
+  transition: all 0.2s;
+  padding: 4px 8px;
+  border-radius: 3px;
+  user-select: none;
 }
 
-.todo-text.editing {
+.todo-text:hover {
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+  cursor: pointer;
+}
+
+.todo-item.editing .todo-text {
   display: none;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: #666;
+  cursor: grab;
+}
+
+.todo-item.completed .todo-text:hover {
+  color: #666;
+  background: transparent;
+  cursor: grab;
 }
 
 .edit-input {
@@ -157,11 +224,21 @@ h1 {
   padding: 8px 12px;
   font-size: 16px;
   border: 2px solid #667eea;
-  border-radius: 3px;
+  border-radius: 4px;
   outline: none;
   display: none;
   background: #2a2a3e;
   color: #e0e0e0;
+  box-shadow:
+    0 0 0 3px rgba(102, 126, 234, 0.2),
+    inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+
+.edit-input:focus {
+  box-shadow:
+    0 0 0 3px rgba(102, 126, 234, 0.3),
+    inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .edit-input.active {

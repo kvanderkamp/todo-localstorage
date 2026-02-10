@@ -1,41 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo App</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1>todos</h1>
-        
-        <div class="input-section">
-            <input type="text" id="todoInput" placeholder="What needs to be done?" autocomplete="off">
-            <button id="addBtn" class="btn-add">Add</button>
-        </div>
+      <h1>todos</h1>
 
-        <div class="todo-list-container" id="todoListContainer">
-            <ul id="todoList" class="todo-list"></ul>
-            
-            <div class="footer" id="footer">
-                <span class="todo-count" id="todoCount">0 items left</span>
-                
-                <div class="filters">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="active">Active</button>
-                    <button class="filter-btn" data-filter="completed">Completed</button>
-                </div>
-                
-                <button class="clear-completed" id="clearCompleted">Clear completed</button>
-            </div>
-        </div>
+      <div class="input-section">
+        <input
+          type="text"
+          id="todoInput"
+          placeholder="What needs to be done?"
+          autocomplete="off"
+        />
+        <button id="addBtn" class="btn-add">Add</button>
+      </div>
 
-        <div class="actions">
-            <button id="resetBtn" class="btn-reset">Reset All</button>
+      <div class="todo-list-container" id="todoListContainer">
+        <ul id="todoList" class="todo-list"></ul>
+
+        <div class="footer" id="footer">
+          <span class="todo-count" id="todoCount">0 items left</span>
+
+          <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="completed">
+              Completed
+            </button>
+          </div>
+
+          <button class="clear-completed" id="clearCompleted">
+            Clear completed
+          </button>
         </div>
+      </div>
+
+      <div class="actions">
+        <button id="resetBtn" class="btn-reset">Reset All</button>
+      </div>
     </div>
 
-    <script src="app.js"></script>
-</body>
+    <script src="dist/app.js"></script>
+  </body>
 </html>
