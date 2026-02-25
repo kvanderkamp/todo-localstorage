@@ -1,0 +1,21 @@
+{
+  "name": "todo-localstorage",
+  "version": "1.0.0",
+  "description": "A TypeScript todo app with localStorage persistence",
+  "scripts": {
+    "build": "esbuild src/main.ts --bundle --outfile=dist/app.js --target=es2020",
+    "watch": "esbuild src/main.ts --bundle --outfile=dist/app.js --target=es2020 --watch",
+    "dev": "esbuild src/main.ts --bundle --outfile=dist/app.js --target=es2020 --watch"
+  },
+  "keywords": [
+    "todo",
+    "typescript",
+    "localstorage"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.19.11",
+    "typescript": "^5.3.3"
+  }
+}
